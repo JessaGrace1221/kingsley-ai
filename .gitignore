@@ -1,0 +1,4 @@
+git rm -r --cached node_modules
+git add .gitignore
+git commit -m "Removed node_modules and added to .gitignore"
+git push --no-verify
