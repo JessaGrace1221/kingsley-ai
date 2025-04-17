@@ -1,5 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      OPENAI_API_KEY: string;
+      SYSTEM_PROMPT: string;
+    }
+  }
+}
+
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY ?? '';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
