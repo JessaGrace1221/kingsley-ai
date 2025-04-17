@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const OPENAI_API_KEY = process.env.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;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY ?? '';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { prompt } = req.body;
@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       messages: [
         {
           role: 'system',
-          content: process.env.SYSTEM_PROMPT,
+          content: process.env.SYSTEM_PROMPT ?? '',
         },
         {
           role: 'user',
